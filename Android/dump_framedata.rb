@@ -1,7 +1,7 @@
 # Summary: This script is used for dumping data related to graphic frame in android devices, it utilizes "adb shell dumpsys gfxinfo" command to dump data into files in a regular freqency.
 
 # Usage: The script accepts one argument which is process name you want to profile data.
-# To start dumping, In terminal, issue "Ruby profileFrame.rb [your process name]"
+# To start dumping, In terminal, issue "Ruby dump_framedata.rb [your process name]"
 # To stop dumping, in terminal, press ctrl+c
 
 require 'pathname'
