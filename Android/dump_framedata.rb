@@ -35,7 +35,6 @@ def deleteProfileData()
     currentPath = File.dirname(__FILE__)
     Dir.foreach(currentPath) do |x|
         begin
-            #if x.to_s.end_with?(".framedata.txt")||x.to_s.end_with?(".profile.txt") then
             if x.to_s.end_with?("profile.txt") then
                 File.delete(x.to_s)
                 puts "deleting #{x.to_s}"
@@ -144,10 +143,3 @@ end
 
 
 dumpData
-
-
-
-
-
-        
-
