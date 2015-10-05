@@ -82,12 +82,14 @@ def extractDataInternal(fileObj, dataHashTable)
     current = fileObj.gets
     while current != $PROFILE_DATA_END
         if current =~ $MATCH_ACTIVITY then
+            activity = current
             if dataHashTable[current] == nil then
                 dataHashTable[current] = Array.new
+                dataHashTable[current].push(fileObj.gets)
             end
-            activity = current
-            fileObj.gets # skip column name line
-            current = fileObj.gets
+            while not current =~ $MATCH_DATA do
+                current = fileObj.gets
+            end
             while current =~ $MATCH_DATA do
                 dataHashTable[activity].push(current)
                 current = fileObj.gets
